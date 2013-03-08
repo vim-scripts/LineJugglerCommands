@@ -1,0 +1,25 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4465
+
+DESCRIPTION
+Most of the line manipulation mappings of the LineJuggler.vim plugin can
+also be done with built-in Ex commands like :move, :put, etc. This plugin
+adds those commands that do not exist (in a simple form) as built-in commands.
+Sometimes, a command is just more practical (e.g. in a script), more
+repeatable (from the command-line history), or offers different line
+addressing.
+Namely, this plugin provides a :Swap command to exchange two ranges of
+lines.
+
+SOURCE
+Inspired by the following Stack Overflow question:
+    http://stackoverflow.com/questions/15296393/line-swapping-in-vim/15298132
+
+SEE ALSO
+
+- This plugin is based on the functionality of the (required) LineJugger.vim
+  plugin (vimscript #4140), which offers many mappings to quickly duplicate
+  and move lines to above / below the current line.
+
+USAGE
+:[range]Swap {range}    Exchange the current line / line(s) given by [range]
+                        with the lines in {range}.
