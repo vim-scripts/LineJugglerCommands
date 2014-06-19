@@ -8,7 +8,7 @@ Sometimes, a command is just more practical (e.g. in a script), more
 repeatable (from the command-line history), or offers different line
 addressing.
 Namely, this plugin provides a :Swap command to exchange two ranges of
-lines.
+lines (or with a register), and a similar :Replace command.
 
 SOURCE
 Inspired by the following Stack Overflow question:
@@ -18,10 +18,26 @@ SEE ALSO
 - This plugin is based on the functionality of the (required) LineJugger.vim
   plugin (vimscript #4140), which offers many mappings to quickly duplicate
   and move lines to above / below the current line.
+- ReplaceWithRegister.vim (vimscript #2703) provides normal and visual mode
+  gr commands that are similar to the :Replace Ex command.
 
 USAGE
 :[range]Swap {range}    Exchange the current line / line(s) given by [range]
                         with the lines in {range}.
+:[range]Swap [["]x]     Exchange the current line / line(s) given by [range]
+                        with the text from register [x]. This always works
+                        linewise, like a combination of :delete [x] and
+                        :put.
 
 :[range]Replace {range} Replace the current line / line(s) given by [range]
                         with the lines in {range}.
+:[range]Replace [["]x]
+                        Replace the current line / line(s) given by [range]
+                        with the text from register [x]. This always works
+                        linewise, like a combination of :delete and
+                        :put.
+
+                        Note: To use one of the numbered registers 1-9, you
+                        need to prepend the optional double quotes ("1 - "9),
+                        in order to disambiguate them from the absolute lines
+                        1 - 9.
